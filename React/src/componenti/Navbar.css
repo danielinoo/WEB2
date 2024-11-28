@@ -1,3 +1,43 @@
 ul li {
     color: red;
 }
+
+.nacosettacoibordiarrotondati{
+
+
+    background-color: rgb(179, 179, 238);
+    border-radius: 30px;
+    vertical-align: middle;
+    line-height: 200px;
+
+
+
+}
+
+
+.box{
+    width: 200px;text-align: center;
+    background-color: rgb(60, 221, 233);
+    height: 200px;
+    border: 50px;
+
+}
+
+
+.rotazione{
+
+    rotate: 30deg;
+    background-color: rgb(219, 151, 62);
+}
+
+.teruotoquannotetocco{
+
+    overflow: 100px;
+    transition-duration:100 ;
+    transform: 100px; ;
+}
+
+.tefermi{
+    overflow: 300px;
+    rotate: 360deg;
+}
