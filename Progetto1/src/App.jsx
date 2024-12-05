@@ -1,3 +1,7 @@
+// nmp install node
+// dentro React nvm install node
+// npm run dev
+
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
