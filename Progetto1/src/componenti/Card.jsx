@@ -74,9 +74,9 @@ import './Card.css'
 
 
 //*********************************SECONDO METODO IF ELSE*******************
-// {vis ? <span>visitato</span> : <span>Non visitato</span>} if else
+// {vis ? <span>visitato</span> : <span>Non visitato</span>}   if else
 //  {vis && <span>visitato</span>}     vis è vero allora te lo faccio vede senno no
-
+//{!vis && <span> non visitato</span>}      se vis è falso non visitato te lo faccio vede
 
 // eslint-disable-next-line react/prop-types
 function Card({descrizione,titolo,img,vis}){
