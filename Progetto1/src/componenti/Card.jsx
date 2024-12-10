@@ -91,6 +91,7 @@ function Card({descrizione,titolo,img,vis}){
             <br></br><br></br>
             <hr className='hrm'></hr>
             
+            
         </div>
 
 
