@@ -3,11 +3,19 @@
 // npm run dev
 
 
+
+//rivedere Padre
+// import Padre from './componenti/Padre'
+
+
+
+
 import './App.css'
 import Card from './componenti/Card'
 import Todolist from './componenti/Todolist'
 import UserProfile from './componenti/userProfile'
-import Padre from './componenti/Padre'
+import ControlloForm from './componenti/Controllo_form'
+import RegistrationForm from './componenti/Registrazione_form'
 
 // funzione evento -----e --> è per evento
 function alertClick(){
@@ -117,7 +125,26 @@ function App() {
         <br></br>
         <br></br>
         <br></br>
-        <Padre></Padre>
+        {/* riverdere */}
+        {/* <Padre></Padre> */}
+
+        <br></br>
+        <br></br>
+        <br></br>
+        <ControlloForm></ControlloForm>
+        <br></br>
+        <br></br>
+        <br></br>
+        <RegistrationForm></RegistrationForm>
+        <br></br>
+        <br></br>
+        <br></br>
+
+
+
+
+
+
 
 
 
