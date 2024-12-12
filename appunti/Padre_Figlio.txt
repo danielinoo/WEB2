@@ -1,0 +1,89 @@
+
+padre importa il figlio
+app importa il padre
+
+
+
+---------PADRE---passaggio di un testo------
+// eslint-disable-next-line no-unused-vars
+import React, { useState} from "react";
+
+import Figlio from './Figlio';
+
+function Padre(){
+
+    const [mes, setMes] = useState('');
+    
+    //funzione chiamata della funzione figlio
+    const chamata = (figlio_massaggio) => {
+        setMes (figlio_massaggio);
+    };
+
+    return(
+        <div>
+            <h1>messaggio figlio {mes}</h1>
+            <Figlio fig_mes = {chamata}></Figlio>
+
+
+        </div>
+    )
+
+}
+export default Padre;
+
+
+
+-------------------------------------FIGLIO------------passaggio di un testo-----------------
+
+// eslint-disable-next-line no-unused-vars
+import React from "react";
+
+function Figlio(fig_mes){
+    const messagio_al_padre = () =>  {
+        //invia il messaggio al padre
+        fig_mes('bello zi');
+    };
+
+    return(
+        <div>
+            <button onClick={messagio_al_padre}>invia messaggio al padre</button>
+        </div>
+    )
+}
+export default Figlio;
+
+
+
+
+padre importa il figlio
+app importa il padre
+
+
+-------------------------passaggio oggetti--------------------------
+------------------------FIGLIO------------------------------------
+// eslint-disable-next-line no-unused-vars
+import React from "react";
+
+function Figlio2 ({oggetto_padre}) {
+    const modifica_user = () => {
+        const newUser = {name : 'Mario', age: 30};
+        
+        
+        //mivia oggetto nuovo al padre
+        oggetto_figlio(newUser);
+    };
+    
+
+    return(
+        <div>
+
+            <button onClick={modifica_user}>aggiorna l utente</button>
+        </div>
+    );
+
+};
+export default Figlio2;
+
+
+
+------------------------------------PADRE-----------------------------
