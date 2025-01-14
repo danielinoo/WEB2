@@ -1,0 +1,29 @@
+Step Uno:
+• Verificare le versioni di node e npm
+• Node -v
+• Npm –v
+ Step Due:
+• Lanciare il comando:
+• npm create vite@latest nome_progetto --template react
+ Step Tre:
+• ASPETTATE a lanciare i comandi che compaiono nella
+shell.
+
+
+
+In caso di problemi
+In caso ci siano errori nell’ utilizzo di Vite potete seguire questi passaggi:
+Da shell lancia questo comando.
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash
+Successivamente lanciare uil comando
+nvm install node
+E successivamente rilaciare il comdando
+npm create vite@latest my-vue-app --template react
+
+
+per runnare il progetto 
+
+// nvm install node
+// dentro React nvm install node
+// npm run dev
+

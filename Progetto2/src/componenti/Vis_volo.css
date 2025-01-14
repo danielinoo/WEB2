@@ -1,0 +1,31 @@
+table {
+  width: 100%;
+  border-collapse: collapse; /* Elimina gli spazi tra le celle */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+thead {
+  background-color: #4e4f4e;  /* Colore verde per l'intestazione */
+  color: white;
+  text-align: left;
+  font-size: 1.1rem;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;  /* Colore alternato per le righe */
+}
+td {
+  border-top: 1px solid #ddd;
+}
+
+th {
+  border-top: 2px solid #f7f9f7; /* Bordi più spessi per l'intestazione */
+}
