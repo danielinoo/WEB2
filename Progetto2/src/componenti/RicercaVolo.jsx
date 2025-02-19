@@ -34,7 +34,7 @@ const MenuTendina = () => {
       </button>
 
       {apertura && (
-        <ul style={{ listStyleType: 'none', padding: 0 }}>
+        <ul style={{ listStyleType: 'none', padding: 0 }}>  
           {datiMenu.length > 0 ? (
             datiMenu.map((item) => (
               <li key={item.id}>
