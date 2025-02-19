@@ -3,38 +3,53 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const RicercaVolo = () => {
-  // Stato per gestire l'apertura del menu e i dati del menu
-  const [apertura, setApertura] = useState(false);
-  const [datiMenu, setDatiMenu] = useState([]);
+  {
+    const [partenza, setPartenza] = useState('');
+    const [arrivo, setArrivo] = useState('');
 
-  // Funzione per aprire/chiudere il menu
-  const toggleMenu = () => {
-    setApertura(!apertura);
-  };
+    const handleSubmit = (e) => {
+    e.preventDefault();
 
-  // Effetto per fare la richiesta Axios quando il componente viene caricato
-  useEffect(() => {
-    // Funzione per ottenere i dati dal database
-    const fetchdatiMenu = async () => {
-      try {
-        const response = await axios.get('http://localhost:5004/RicercaVolo');
-        setDatiMenu(response.data); // Imposta i dati del menu
-      } catch (error) {
-        console.error('Errore nel recuperare i dati dal server:', error);
-      }
+    const data = {
+      partenza: partenza,
+      arrivo: arrivo
     };
 
-    fetchdatiMenu(); // Chiamata alla funzione
-  }, []); // [] significa che verrà eseguito solo una volta al caricamento del componente
+    axios.post('http://localhost:5004/RicercaVolo', data)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error('errore durante la ricerca!', error);
+      });
+    };
 
-  return (
-    <div>
-      <button onClick={toggleMenu}>
-        {apertura ? 'Chiudi Menu' : 'Apri Menu'}
-      </button>
 
-    </div>
-  );
-};
 
-export default RicercaVolo;
+    return (
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="partenza">Scegli la partenza:</label>
+          <input
+            type="text"
+            id="partenza"
+            value={partenza}
+            onChange={(e) => setPartenza(e.target.value)}
+          />
+        </div>
+        <div>
+          <label htmlFor="arrivo">Scegli l'arrivo:</label>
+          <input
+            type="text"
+            id="arrivo"
+            value={arrivo}
+            onChange={(e) => setArrivo(e.target.value)}
+          />
+        </div>
+        <button type="submit">cerca</button>
+      </form>
+      ) 
+    };
+
+  };
+  export default RicercaVolo;
