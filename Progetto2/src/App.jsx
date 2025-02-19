@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Link ,Routes} from 'react-router-dom';
 import Vis_volo from './componenti/Vis_volo'; 
 import Vis_Aer from './componenti/Vis_Aer';
 import Vis_com from './componenti/Vis_com';
+import RicercaVolo from './componenti/RicercaVolo';
 import './App.css'
 function App () {
   return (
@@ -14,7 +15,9 @@ function App () {
         <p>Seleziona una pagina:</p>
 
         <div>
-          <Link to="/"> </Link>
+          <button>
+          <Link to="/"> cerca un volo</Link>
+          </button>
           <button>
             <Link to="/volo">Visualizza Voli</Link>
           </button>
@@ -27,6 +30,7 @@ function App () {
         </div>
 
         <Routes>
+          <Route path='/RicercaVolo' element = {<RicercaVolo /> }/>
           <Route path="/volo" element={<Vis_volo />} />
           <Route path="/aer" element={<Vis_Aer />} />
           <Route path="/comp" element={<Vis_com />} />
