@@ -60,28 +60,31 @@ def visualizza_compagnie():
     cursor2.close()
     return rows 
 
+#controllare se è giusta
+@api.route('/RicercaVolo', methods = ['POST']) 
+def queryRicercaVolo():
+    try:
 
-# @api.route('/query_utente', methods = ['POST'])
-# def query_utente():
+        partenza = request.form['partenza']
+        arrivo = request.form['arrivo']
 
-#         content_type = request.headers.get('Content-Type')
-#         if content_type == 'application/json':
-#             query_ut= str(request.json.get('query'))
-#             try:
+        connection = get_db_connection()
+        cursor2 = connection.cursor()
+        #eseguo query
 
-#                 connection = get_db_connection()
-#                 cursor3 = connection.cursor()
-#                 cursor3.execute(query_ut)
-#                 rows = cursor3.fetchall()
-#                 cursor3.close()
+        #controllare se è giusta la query
+        query = f"select * from Volo, arrpart where arrpart.partenza = {partenza} and arrpart.arrivo = {arrivo}"
+        cursor2.execute(query)
+        rows = cursor2.fetchall()
+        cursor2.close()
+        return rows
+    except Exception as e:
+        # Log dell'errore
+        print(f"Errore: {e}")
+        return jsonify({"error": "Errore interno del server"}), 500
 
-#                 return rows
-#             except (Exception, psycopg2.DatabaseError) as error:
 
-#                     error = str(error)
-#                     return jsonify({"ATTENZIONE": "ERRORE", "Msg": error}), 404
-#         else:
-#             return jsonify({"Esito": "ERRORE", "Msg": "content-type non supportato "}) 
+
 
 
 @api.errorhandler(404)

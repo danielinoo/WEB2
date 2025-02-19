@@ -16,7 +16,7 @@ function App () {
 
         <div>
           <button>
-          <Link to="/"> cerca un volo</Link>
+          <Link to="/RicercaVolo"> cerca un volo</Link>
           </button>
           <button>
             <Link to="/volo">Visualizza Voli</Link>

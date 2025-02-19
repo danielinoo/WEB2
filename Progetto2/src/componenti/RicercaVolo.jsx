@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const MenuTendina = () => {
+const RicercaVolo = () => {
   // Stato per gestire l'apertura del menu e i dati del menu
   const [apertura, setApertura] = useState(false);
   const [datiMenu, setDatiMenu] = useState([]);
@@ -33,21 +33,8 @@ const MenuTendina = () => {
         {apertura ? 'Chiudi Menu' : 'Apri Menu'}
       </button>
 
-      {apertura && (
-        <ul style={{ listStyleType: 'none', padding: 0 }}>  
-          {datiMenu.length > 0 ? (
-            datiMenu.map((item) => (
-              <li key={item.id}>
-                <a href={item.url}>{item.name}</a>
-              </li>
-            ))
-          ) : (
-            <li>Caricamento...</li>
-          )}
-        </ul>
-      )}
     </div>
   );
 };
 
-export default MenuTendina;
+export default RicercaVolo;
