@@ -4,39 +4,39 @@ import axios from 'axios';
 
 const MenuTendina = () => {
   // Stato per gestire l'apertura del menu e i dati del menu
-  const [isOpen, setIsOpen] = useState(false);
-  const [menuItems, setMenuItems] = useState([]);
+  const [apertura, setApertura] = useState(false);
+  const [datiMenu, setDatiMenu] = useState([]);
 
   // Funzione per aprire/chiudere il menu
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    setApertura(!apertura);
   };
 
   // Effetto per fare la richiesta Axios quando il componente viene caricato
   useEffect(() => {
     // Funzione per ottenere i dati dal database
-    const fetchMenuItems = async () => {
+    const fetchdatiMenu = async () => {
       try {
         const response = await axios.get('http://localhost:5004/RicercaVolo');
-        setMenuItems(response.data); // Imposta i dati del menu
+        setDatiMenu(response.data); // Imposta i dati del menu
       } catch (error) {
         console.error('Errore nel recuperare i dati dal server:', error);
       }
     };
 
-    fetchMenuItems(); // Chiamata alla funzione
-  }, []); // [] significa che l'effetto verrà eseguito solo una volta al caricamento del componente
+    fetchdatiMenu(); // Chiamata alla funzione
+  }, []); // [] significa che verrà eseguito solo una volta al caricamento del componente
 
   return (
     <div>
       <button onClick={toggleMenu}>
-        {isOpen ? 'Chiudi Menu' : 'Apri Menu'}
+        {apertura ? 'Chiudi Menu' : 'Apri Menu'}
       </button>
 
-      {isOpen && (
+      {apertura && (
         <ul style={{ listStyleType: 'none', padding: 0 }}>
-          {menuItems.length > 0 ? (
-            menuItems.map((item) => (
+          {datiMenu.length > 0 ? (
+            datiMenu.map((item) => (
               <li key={item.id}>
                 <a href={item.url}>{item.name}</a>
               </li>
