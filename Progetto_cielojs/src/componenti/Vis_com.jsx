@@ -19,15 +19,17 @@ const Vis_com = () => {
       <table>
         <thead>
           <tr>
-            <th>anno fondazione</th>
+            <th>Codice</th>
             <th>Nome</th>
+            <th>Paese</th>
           </tr>
         </thead>
         <tbody>
           {data.map(com => (
-            <tr key={com.nome}>
-              <td>{com.annofondaz}</td>
+            <tr key={com.id}>
+              <td>{com.codice}</td>
               <td>{com.nome}</td>
+              <td>{com.paese}</td>
             </tr>
           ))}
         </tbody>

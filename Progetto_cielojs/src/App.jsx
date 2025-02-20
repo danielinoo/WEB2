@@ -17,6 +17,7 @@ function App() {
 
         {/* Contenuto delle rotte */}
         <Routes>
+          
           <Route path='/RicercaVolo' element={<RicercaVolo />} />
           <Route path="/volo" element={<Vis_volo />} />
           <Route path="/aer" element={<Vis_Aer />} />

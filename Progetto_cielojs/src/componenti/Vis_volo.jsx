@@ -10,9 +10,7 @@ const Vis_volo = () => {
     axios.get('http://127.0.0.1:5004/voli') //chiamata get
     .then(response => {
       setData(response.data.voli)
-    })
-    .catch(error => console.error('Errore nel recupero dei dati:', error));
-
+    });
   },[]);
 
   return (

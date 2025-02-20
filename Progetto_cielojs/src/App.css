@@ -12,7 +12,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background-image: linear-gradient(45deg, #ebebe4, #2c65d7);
+  background-image: linear-gradient(45deg, #ebebe4, #6694f1);
 }
 
 /* Header Section */

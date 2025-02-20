@@ -21,6 +21,7 @@ def visualizza_volo():
     with open('database.json', 'r') as file:
         data = json.load(file)  # Carica i dati JSON nel dizionario Python
     
+    print(data['voli'])
     # Restituisci solo la sezione dei voli
     return jsonify(data['voli'])  # Restituisce solo la lista dei voli
 
