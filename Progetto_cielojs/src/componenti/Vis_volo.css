@@ -32,7 +32,7 @@ th, td {
 
 /* Righe alternate con colore diverso */
 tr:nth-child(even) {
-  background-color: #bebcbc;
+  background-color: #f1ecec;
   color: #333;
 }
 
