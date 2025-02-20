@@ -10,7 +10,7 @@ import './App.css'
 function App () {
   return (
     <Router>
-      <div className='div_1'>
+      <div className='container'>
         <h1>Benvenuto nella gestione dei voli</h1>
         <p>Seleziona una pagina:</p>
 

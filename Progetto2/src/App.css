@@ -19,12 +19,18 @@ button{
   
   font-size: 16px;            
   margin: 10px 20px;            
-
   border-radius: 10px;         
   transition: background-color 0.3s; 
+
+ /* Larghezza e altezza fissa per i bottoni */
+  width: 150px;               
+  height: 70px;               
+     
+
+
 }
 
-.div_1{
+.container{
 
   width: 80%;              
   max-width: 1200px;       
@@ -33,6 +39,10 @@ button{
   background-color: #f9f9f9; 
   border-radius: 10px;   
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  font-family: Arial, sans-serif
+  font-family: Arial, sans-serif;
+       
+ 
+                
 }
+  
 

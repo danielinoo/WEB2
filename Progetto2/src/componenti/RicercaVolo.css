@@ -1,0 +1,32 @@
+/* Stile per il form */
+form {
+   
+    margin: 50px auto;      /* Centra il form nella pagina */
+    
+}
+  
+input{
+    height: 30px;
+    border-radius: 6px;     /* Angoli arrotondati */
+    padding: 10px; 
+    border: 1px solid #ccc;
+    font-size: 20px;     
+    text-align: center;   
+          
+}
+.input:focus{
+
+    border-color: black;  /* Colore del bordo nero quando il campo è selezionato */
+    outline: none;        /* Rimuove il bordo di focus predefinito (blu) */
+}
+
+
+  /* Stile per le etichette */
+label {
+    font-size: 20px;         /* Font leggibile per le etichette */
+    margin-bottom: 5px;      /* Distanza tra etichetta e campo di input */
+    display: block;          /* Ogni etichetta su una nuova riga */
+    
+  }
+
+
