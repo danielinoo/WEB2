@@ -21,6 +21,8 @@ const Vis_Aer = () => {
           <tr>
             <th>Codice</th>
             <th>Nome</th>
+            <th>Citta</th>
+            <th>Nazione</th>
           </tr>
         </thead>
         <tbody>
@@ -28,6 +30,8 @@ const Vis_Aer = () => {
             <tr key={aer.codice}>
               <td>{aer.codice}</td>
               <td>{aer.nome}</td>
+              <td>{aer.citta}</td>
+              <td>{aer.nazione}</td>
             </tr>
           ))}
         </tbody>

@@ -2,6 +2,7 @@
   "voli": [
     {
       "id": 1,
+      "codice": "AZ",
       "partenza": "Milano",
       "arrivo": "Roma",
       "ora_partenza": "08:00",
@@ -9,6 +10,7 @@
     },
     {
       "id": 2,
+      "codice": "AF",
       "partenza": "Milano",
       "arrivo": "Parigi",
       "ora_partenza": "10:00",
@@ -16,6 +18,7 @@
     },
     {
       "id": 3,
+      "codice": "LH",
       "partenza": "Milano",
       "arrivo": "Parigi",
       "ora_partenza": "10:00",
@@ -23,6 +26,7 @@
     },
     {
       "id": 4,
+      "codice": "AF",
       "partenza": "Milano",
       "arrivo": "Parigi",
       "ora_partenza": "10:00",
@@ -30,6 +34,7 @@
     },
     {
       "id": 5,
+      "codice": "AZ",
       "partenza": "Milano",
       "arrivo": "Parigi",
       "ora_partenza": "10:00",
@@ -54,6 +59,26 @@
       "nome": "Lufthansa",
       "codice": "LH",
       "paese": "Germania"
+    }
+  ],
+  "aeroporti": [
+    {
+      "codice": "BER",
+      "nome": "Aeroporto di Berlino-Brandeburgo",
+      "citta": "Berlino",
+      "nazione": "Germania"
+    },
+    {
+      "codice": "FCO",
+      "nome": "Aeroporto di Roma-Fiumicino",
+      "citta": "Roma",
+      "nazione": "Italia"
+    },
+    {
+      "codice": "CDG",
+      "nome": "Aeroporto di Parigi-Charles de Gaulle",
+      "citta": "Parigi",
+      "nazione": "Francia"
     }
   ]
 }

@@ -20,15 +20,18 @@ def visualizza_volo():
         # Carica il contenuto del file JSON
     with open('database.json', 'r') as file:
         data = json.load(file)  # Carica i dati JSON nel dizionario Python
-    
-    print(data['voli'])
     # Restituisci solo la sezione dei voli
     return jsonify(data['voli'])  # Restituisce solo la lista dei voli
 
 
 @api.route('/visualizza_aeroporti', methods=['GET'])
 def visualizza_aeroporti():
-    pass
+    with open('database.json', 'r') as file:
+        data = json.load(file)  # Carica i dati JSON nel dizionario Python
+    
+    # Restituisci solo la sezione dei voli
+    return jsonify(data['aeroporti'])  # Restituisce solo la lista dei voli
+
  
   
 @api.route('/visualizza_compagnie', methods=['GET'])
@@ -42,10 +45,24 @@ def visualizza_compagnie():
 
 
 
-@api.route('/RicercaVolo', methods = ['POST'])
+@api.route('/RicercaVolo', methods=['POST'])
 def queryRicercaVolo():
-    print("Dentro ricerca")
-    pass
+    with open('database.json', 'r') as file:
+        data = json.load(file)  # Carica i dati JSON nel dizionario Python
+
+    partenza = request.args.get('partenza')
+    arrivo = request.args.get('arrivo')
+    voli = data['voli']
+    risultati = []
+
+    #controllare se funziona
+    for volo in voli:
+        
+        if volo['partenza'] == partenza and volo['arrivo'] == arrivo:
+            print(volo)
+            risultati.append(volo)
+
+    return jsonify(risultati)
     
    
 

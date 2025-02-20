@@ -5,12 +5,11 @@ import './Vis_volo.css';
 
 const Vis_volo = () => {
   const [data, setData] = useState([]); // memorizzo i dati 
-
   useEffect(() => {
     axios.get('http://127.0.0.1:5004/voli') //chiamata get
-    .then(response => {
-      setData(response.data.voli)
-    });
+      .then(response => {
+        setData(response.data);  //prende i dati
+      });
   },[]);
 
   return (
@@ -19,21 +18,22 @@ const Vis_volo = () => {
       <table>
         <thead>
           <tr>
-            <th>id</th>
-            <th>partenza</th>
-            <th>arrivo</th>
-            <th>ora partenza</th>
-            <th>ora arrivo</th>
+            <th>Codice volo</th>
+            <th>Partenza</th>
+            <th>Arrivo</th>
+            <th>orario partenza</th>
+            <th>orario arrivo</th>
+            
           </tr>
         </thead>
         <tbody>
-          {data.map(volo => (
-            <tr key={volo.id}>
-              <td>{volo.id}</td>
-              <td>{volo.partenza}</td>
-              <td>{volo.arrivo}</td>
-              <td>{volo.ora_partenza}</td>
-              <td>{volo.ora_arrivo}</td>
+          {data.map(vol => (
+            <tr key={vol.id}>
+              <td>{vol.codice}</td>
+              <td>{vol.partenza}</td>
+              <td>{vol.Arrivo}</td>
+              <td>{vol.ora_partenza}</td>
+              <td>{vol.ora_arrivo}</td>
             </tr>
           ))}
         </tbody>
