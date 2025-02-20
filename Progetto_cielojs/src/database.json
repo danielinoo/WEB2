@@ -1,0 +1,44 @@
+
+{
+    "voli": [
+      {
+        "id": 1,
+        "partenza": "Milano",
+        "arrivo": "Roma",
+        "ora_partenza": "08:00",
+        "ora_arrivo": "09:00"
+      },
+      {
+        "id": 2,
+        "partenza": "Milano",
+        "arrivo": "Parigi",
+        "ora_partenza": "10:00",
+        "ora_arrivo": "12:00"
+      },
+
+      {
+        "id": 2,
+        "partenza": "Milano",
+        "arrivo": "Parigi",
+        "ora_partenza": "10:00",
+        "ora_arrivo": "12:00"
+      },
+
+      {
+        "id": 2,
+        "partenza": "Milano",
+        "arrivo": "Parigi",
+        "ora_partenza": "10:00",
+        "ora_arrivo": "12:00"
+      },
+
+      {
+        "id": 2,
+        "partenza": "Milano",
+        "arrivo": "Parigi",
+        "ora_partenza": "10:00",
+        "ora_arrivo": "12:00"
+      }
+    ]
+  }
+  
