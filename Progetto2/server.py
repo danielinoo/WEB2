@@ -60,24 +60,47 @@ def visualizza_compagnie():
     cursor2.close()
     return rows 
 
-#controllare se è giusta
-@api.route('/RicercaVolo', methods = ['POST']) 
+@api.route('/RicercaVolo', methods = ['POST'])
 def queryRicercaVolo():
+    print("Dentro ricerca")
     try:
-
-        partenza = request.form['partenza']
-        arrivo = request.form['arrivo']
-
+        # Connessione al database
         connection = get_db_connection()
         cursor2 = connection.cursor()
-        #eseguo query
 
-        #controllare se è giusta la query
-        query = f"select * from Volo, arrpart where arrpart.partenza = {partenza} and arrpart.arrivo = {arrivo}"
+        # Prendo i dati dal corpo della richiesta
+        data = request.get_json() 
+        partenza = data.get('partenza')
+        arrivo = data.get('arrivo')
+
+        # Query SQL per trovare i voli
+        query = f"""
+        SELECT 
+            Volo.codice, 
+            Volo.comp, 
+            Volo.durataMinuti, 
+            LuogoAeroportoPartenza.citta AS partenza_citta, 
+            LuogoAeroportoArrivo.citta AS arrivo_citta
+        FROM 
+            Volo
+        JOIN 
+            ArrPart ON ArrPart.codice = Volo.codice AND ArrPart.comp = Volo.comp
+        JOIN 
+            Aeroporto AS AeroportoPartenza ON AeroportoPartenza.codice = ArrPart.partenza
+        JOIN 
+            Aeroporto AS AeroportoArrivo ON AeroportoArrivo.codice = ArrPart.arrivo
+        JOIN 
+            LuogoAeroporto AS LuogoAeroportoPartenza ON LuogoAeroportoPartenza.aeroporto = AeroportoPartenza.codice
+        JOIN 
+            LuogoAeroporto AS LuogoAeroportoArrivo ON LuogoAeroportoArrivo.aeroporto = AeroportoArrivo.codice
+        WHERE 
+            LuogoAeroportoPartenza.citta = '{partenza}' AND LuogoAeroportoArrivo.citta = '{arrivo}'
+        """
         cursor2.execute(query)
         rows = cursor2.fetchall()
         cursor2.close()
-        return rows
+        return jsonify(rows)
+
     except Exception as e:
         # Log dell'errore
         print(f"Errore: {e}")
