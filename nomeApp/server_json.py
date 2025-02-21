@@ -55,6 +55,8 @@ def queryRicercaVolo():
     voli = data['voli']
     risultati = []
 
+    print(partenza)
+    #controllare se funziona
     for volo in voli:
         
         if volo['partenza'] == partenza and volo['arrivo'] == arrivo:

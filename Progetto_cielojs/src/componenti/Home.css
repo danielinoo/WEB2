@@ -1,0 +1,19 @@
+
+.div_home {
+
+    text-align: center; 
+  }
+  
+
+  .welcomeText {
+    font-size: 2.5rem; /* Imposta la dimensione del font */
+    font-weight: bold; /* Grassetto */
+    margin-bottom: 10px; /* Distanza tra il titolo e il paragrafo */
+  }
+  
+  /* Stili per il paragrafo */
+  .subText {
+    font-size: 1.2rem; /* Imposta la dimensione del font */
+    color: #555; /* Colore grigio scuro per il testo */
+  }
+  

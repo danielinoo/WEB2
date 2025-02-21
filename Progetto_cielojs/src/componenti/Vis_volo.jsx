@@ -23,7 +23,6 @@ const Vis_volo = () => {
             <th>Arrivo</th>
             <th>orario partenza</th>
             <th>orario arrivo</th>
-            
           </tr>
         </thead>
         <tbody>

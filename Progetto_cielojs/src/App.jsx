@@ -6,6 +6,7 @@ import RicercaVolo from './componenti/RicercaVolo';
 import Vis_volo from './componenti/Vis_volo';
 import Vis_Aer from './componenti/Vis_Aer';
 import Vis_com from './componenti/Vis_com';
+import Home from './componenti/Home';
 import './App.css';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
 
         {/* Contenuto delle rotte */}
         <Routes>
+          <Route path= "/" element= {<Home />} />
           <Route path='/RicercaVolo' element={<RicercaVolo />} />
           <Route path="/volo" element={<Vis_volo />} />
           <Route path="/aer" element={<Vis_Aer />} />

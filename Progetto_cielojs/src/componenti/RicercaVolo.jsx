@@ -85,20 +85,20 @@ const RicercaVolo = () => {
         <thead>
           <tr>
             <th>Codice</th>
-            <th>Compagnia</th>
-            <th>Durata (minuti)</th>
-            <th>citta di partenza</th>
-            <th>citta d arrivo</th>
+            <th>Partenza</th>
+            <th>Arrivo</th>
+            <th>Orario partenza</th>
+            <th>Orario arrivo</th>
           </tr>
         </thead>
         <tbody>
           {data.map(volo => (
             <tr key={volo.codice}>
               <td>{volo.codice}</td>
-              <td>{volo.comp}</td>
-              <td>{volo.durataminuti}</td>
-              <td>{volo.partenza_citta}</td>
-              <td>{volo.arrivo_citta}</td>
+              <td>{volo.partenza}</td>
+              <td>{volo.arrivo}</td>
+              <td>{volo.ora_partenza}</td>
+              <td>{volo.ora_arrivo}</td>
             </tr>
           ))}
         </tbody>
