@@ -66,25 +66,38 @@ visualizzaGiorno(10);
 
 //3-------------------------------------------------------
 
-
-
-let numeroSegreto = Math.floor(Math.random() * 101);
+    var cont = 0;
+    var numeroSegreto = Math.floor(Math.random() * 101);
     console.log("Numero segreto:", numeroSegreto);  //per il controllo
+    
 
 
-const indovinanumero = ()  =>{
+const indovinaNumero = ()  =>{
+
     let risultato = document.getElementById("risultato");
-    let input = document.getElementById("tentativo").value;
-    inputUtente = parseInt(input);
+    let input = document.getElementById("tentativo");
+    let c = document.getElementById("num");
+
+    inputUtente = parseInt(input.value);
+
+    cont++;
 
     if (inputUtente < numeroSegreto) {
         risultato.textContent = "Il numero che hai inserito è troppo piccolo. Riprova!";
     } else if (inputUtente > numeroSegreto) {
         risultato.textContent = "Il numero che hai inserito è troppo grande. Riprova!";
-    } else {
+    } else if (inputUtente === numeroSegreto){
         risultato.textContent = "Congratulazioni! Hai indovinato il numero!";
     }
-    document.getElementById("userInput").value = "";
+    c.textContent = cont ;
+    input.value = "";
+}
 
 
+const resetta = () => {
+    cont = 0;  
+    numeroSegreto = Math.floor(Math.random() * 101);  
+    document.getElementById("risultato").textContent = "";  
+    document.getElementById("tentativo").value = ""; 
+    document.getElementById("num").value = 0; 
 }
